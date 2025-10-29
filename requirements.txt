@@ -1,0 +1,12 @@
+Flask==2.2.5
+flask-cors
+pymongo
+python-dotenv
+pytesseract
+easyocr
+pdf2image
+python-docx
+transformers
+torch
+sentencepiece
+gunicorn

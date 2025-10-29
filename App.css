@@ -1,0 +1,170 @@
+/*
+  Futuristic AI Chat CSS
+  ----------------------
+  Instructions:
+  1. Add this Google Font link to the <head> of your HTML file:
+     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+*/
+
+/* Define color palette and root variables for easy customization */
+:root {
+  --background-color: #0d1117; /* GitHub dark mode background */
+  --container-bg: #161b22;
+  --primary-accent: #58a6ff; /* A vibrant blue */
+  --secondary-accent: #1f6feb;
+  --text-color: #c9d1d9;
+  --border-color: #30363d;
+  --glow-color: rgba(88, 166, 255, 0.5);
+}
+
+/* Add a subtle background pattern for a high-tech feel */
+body {
+    background-color: var(--background-color);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+
+/* Main Container - Dark, with a neon glow effect */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px;
+  background: var(--container-bg);
+  font-family: 'Rajdhani', sans-serif; /* A more technical-looking font */
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 25px var(--glow-color); /* The signature AI glow */
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Chat Area - Clean and integrated */
+.result-container {
+  background-color: var(--background-color); /* Slightly darker for depth */
+  padding: 15px;
+  border-radius: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  box-shadow: none; /* Removed inner shadow for a flatter, modern look */
+}
+
+/* Chat Bubbles - Using gradients and sharp angles */
+.bot-message, .user-message {
+  max-width: 85%;
+  padding: 12px 18px;
+  margin: 10px 0;
+  border-radius: 25px;
+  line-height: 1.5;
+  display: block; /* Changed to block for easier margin control */
+  clear: both;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.bot-message:hover, .user-message:hover {
+    transform: translateY(-2px);
+}
+
+.bot-message {
+  background: linear-gradient(135deg, #2a2a3a, #1a1a2a);
+  color: var(--text-color);
+  float: left;
+  border-top-left-radius: 4px; /* Sharper edge for a futuristic look */
+}
+
+.user-message {
+  background: linear-gradient(135deg, var(--secondary-accent), var(--primary-accent));
+  color: #fff;
+  float: right;
+  border-top-right-radius: 4px; /* Sharper edge */
+}
+
+/* Input Area - Seamless design */
+.input-area {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px 18px;
+  border-radius: 25px;
+  border: 1px solid var(--border-color);
+  outline: none;
+  font-size: 16px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Glow effect on input focus */
+.input-area input:focus {
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+/* Submit Button - Circular, glowing, and iconic */
+.submit-button {
+  background-color: var(--primary-accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--glow-color);
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-accent);
+  transform: scale(1.1) rotate(15deg); /* Playful and interactive hover effect */
+  box-shadow: 0 0 20px var(--glow-color);
+}
+
+/* Loading Animation - A subtle pulse */
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.loading-message {
+  color: var(--primary-accent);
+  font-style: normal;
+  text-align: center;
+  margin-top: 10px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Scrollbar Design - Styled to match the dark theme */
+.result-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.result-container::-webkit-scrollbar-track {
+  background: var(--container-bg);
+  border-radius: 10px;
+}
+
+.result-container::-webkit-scrollbar-thumb {
+  background: var(--primary-accent);
+  border-radius: 10px;
+  border: 2px solid var(--container-bg);
+}
+
+.result-container::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-accent);
+}
